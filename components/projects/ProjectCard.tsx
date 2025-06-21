@@ -6,25 +6,44 @@ import Link from "next/link";
 function ProjectCard({ project }) {
   return (
     <div
-      className="max-w-sm mx-auto flex flex-col projects-center md:projects-start md:justify-center"
+      className="flex flex-col justify-between border border-fun-gray rounded-xl p-4 w-full h-[500px] max-w-sm mx-auto transition hover:-translate-y-2 hover:opacity-75 hover:border-fun-pink"
       key={project.id}
     >
       <a
         href={project.link || project.github}
         target="_blank"
-        className={`w-full relative rounded-xl border-fun-gray border p-2 transition hover:-translate-y-2 hover:opacity-75 hover:border-fun-pink will-change-projectCard`}
+        rel="noopener noreferrer"
+        className="w-full block h-48 relative rounded-md overflow-hidden mb-4"
       >
-        <img
-          className="w-full rounded-md"
+        <Image
           src={project.img}
+          alt={project.title}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-md"
         />
       </a>
-      <div className="w-full mt-5">
-        <div className="flex projects-center justify-between">
-          <a href={project.link || project.github} target="_blank">
-            <h3 className="text-lg font-bold">{project.title}</h3>
-          </a>
-          <div className="space-x-2">
+
+      <div className="flex flex-col justify-between flex-grow">
+        <div className="mb-2">
+          <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+          <p className="text-sm text-fun-gray line-clamp-3">{project.desc}</p>
+        </div>
+
+        <div className="mt-auto">
+          <ul className="flex flex-wrap items-center mt-3 -ml-2 list-none">
+            {project.tags.map((tag, index) => (
+              <li key={index}>
+                <Link href={`/projects/tag/${kebabCase(tag)}`}>
+                  <div className="m-1 rounded-lg text-sm bg-fun-pink-dark py-1 px-2 cursor-pointer hover:opacity-75">
+                    {tag}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex justify-end mt-2 space-x-2">
             {project.link && (
               <a href={project.link} target="_blank" rel="noreferrer">
                 <Image
@@ -47,20 +66,6 @@ function ProjectCard({ project }) {
             )}
           </div>
         </div>
-        <p className="text-fun-gray text-left text-sm">{project.desc}</p>
-        <ul className="flex flex-wrap items-center mt-2 -ml-2 list-none">
-          {project.tags.map((tag, index) => {
-            return (
-              <li key={tag}>
-                <Link href={`/projects/tag/${kebabCase(tag)}`}>
-                  <div className="m-1 rounded-lg text-sm bg-fun-pink-dark py-1 px-2 cursor-pointer hover:opacity-75">
-                    {tag}
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </div>
   );

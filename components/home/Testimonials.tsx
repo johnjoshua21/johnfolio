@@ -1,42 +1,72 @@
 import React from "react";
 import SectionTitle from "../global/SectionTitle";
-import { testimonials } from "@/data/content/home";
 
 function Testimonials() {
   return (
-    <div className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto">
-      <SectionTitle title="Why people love my work!" />
-      <div className="max-w-5xl m-auto md:max-h-[200px] grid grid-cols-1 gap-10 md:gap-10 md:grid-cols-3 items-start">
-        {testimonials.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className="relative bg-fun-pink-darker border border-fun-pink-light p-5 rounded-lg h-full flex flex-col justify-between"
-            >
-              {index === 0 && (
-                <>
-                  <img
-                    className="sqD top-[-50px] left-0 bottom-auto right-auto md:bottom-[-50px] md:top-auto md:right-[-25px] md:left-auto w-20 z-[-100]"
-                    src="/static/doodles/testimonials/yay.svg"
-                  />
-                </>
-              )}
-              <p className="text-base italic relative testimonialQuote">
-                "{item.quote}"
-              </p>
-              <p className="mt-4 text-xs text-fun-gray">
-                <b className="text-fun-pink font-monospace">{item.name}</b> -{" "}
-                {item.job}
-              </p>
-              {index === 2 && (
-                <img
-                  className="sqD top-[-30px] right-[-15px] w-11"
-                  src="/static/doodles/testimonials/squiggle2.svg"
-                />
-              )}
-            </div>
-          );
-        })}
+    <div id="about" className="flex flex-col text-left max-w-6xl w-full mx-auto px-4 text-[17px] ">
+      <SectionTitle title="Get to Know Me" />
+      <p className="text-gray-300 mb-6 text-[18px]">
+        Full Stack Developer with Java Spring Boot and Next.js, pursuing ECE. Interested in IoT, embedded systems, and exploring ML and data science to expand my tech skills.
+      </p>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2 text-[#00B9FF]">🎓 Education</h2>
+        <p className="text-white font-semibold text-[18px]">Bachelor of Engineering (B.E.) in Electronics and Communication Engineering (ECE)</p>
+        <p className="text-sm text-gray-400">Dr.N.G.P. Institute of Technology, 2026</p>
+      </div>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2 text-[#00B9FF]">📜 Certificates</h2>
+        <ul className="list-disc list-inside space-y-1 text-gray-300">
+          <li><span className="text-white font-semibold text-[18px]">Social Innovation in Industry 4.0 – Elite + Silver Grade</span><br />NPTEL, 2024</li>
+          <li><span className="text-white font-semibold text-[18px]">Problem Solving Through Programming in C – Elite Grade</span><br />NPTEL, 2023</li>
+          <li><span className="text-white font-semibold text-[18px]">Python Programming Complete Beginners Course Bootcamp</span><br />Udemy, 2024</li>
+        </ul>
+      </div>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2 text-[#00B9FF]">🛠️ Workshops</h2>
+        <ul className="list-disc list-inside space-y-1 text-gray-300">
+          <li><span className="text-white font-semibold text-[18px]">VLSI Design and Recent Trends</span><br />IIT Palakkad, 2024</li>
+          <li><span className="text-white font-semibold text-[18px]">LIFTOFF DRONE WORKSHOP</span><br />Spacechase, 2023</li>
+          <li><span className="text-white font-semibold text-[18px]">IoT Product Design and Testing</span><br />Krishtec, 2024</li>
+          <li><span className="text-white font-semibold text-[18px]">Arduino UNO</span><br />Dr.N.G.P. Institute of Technology, 2023</li>
+        </ul>
+      </div>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2 text-[#00B9FF]">💼 Experience</h2>
+
+        <div className="mb-6">
+          <p className="text-white font-semibold text-[18px]">Web Development Intern</p>
+          <p className="text-sm text-gray-400">Beyond Code Technologies, 2025</p>
+          <p className="text-gray-300 mt-2 text-sm">
+            Worked as a full stack developer in the company, contributing to the official website and actively involved in the
+            end-to-end development of full stack projects using Spring Boot and Next.js.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-white font-semibold text-[18px]">Machine Learning Intern</p>
+          <p className="text-sm text-gray-400">IPCS Global Solution, 2024</p>
+          <p className="text-gray-300 mt-2 text-sm">
+            Worked on data analysis projects involving pizza sales and multi-category retail sales. Utilized Python along with libraries like Pandas, NumPy, Matplotlib, and Seaborn for data cleaning, visualization, and deriving insights. Developed strong understanding in EDA and practical applications of data science concepts.
+          </p>
+        </div>
+      </div>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2 text-[#00B9FF]">📌 Responsibilities</h2>
+        <ul className="list-disc list-inside space-y-1 text-gray-300">
+          <li>
+            <span className="text-white font-semibold text-[18px]">Executive Member – Student Development Council</span><br />
+            Dr.N.G.P. Institute of Technology
+          </li>
+          <li>
+            <span className="text-white font-semibold text-[18px]">Hands-on Session – Arduino UNO</span><br />
+            Conducted an introductory workshop for juniors on Arduino programming and sensor integration, offering practical exposure to embedded systems.
+          </li>
+        </ul>
       </div>
     </div>
   );
