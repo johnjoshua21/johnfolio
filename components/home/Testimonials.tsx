@@ -67,6 +67,16 @@ function Testimonials() {
             Conducted an introductory workshop for juniors on Arduino programming and sensor integration, offering practical exposure to embedded systems.
           </li>
         </ul>
+        <div className="flex justify-center mt-10 mb-2">
+          <a
+            href="/Resume_JohnJoshua.pdf"
+            download
+            className="px-6 py-3 text-white font-semibold rounded-xl shadow-lg bg-[#00B9FF] hover:bg-[#00a1e6] text-[18px] transition duration-300 ease-in-out"
+          >
+            🚀 Launch My Resume
+          </a>
+        </div>
+
       </div>
     </div>
   );
