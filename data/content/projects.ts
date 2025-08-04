@@ -36,7 +36,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Calibrating sesnsors for aquarium",
+    title: "Calibrating sensors for aquarium",
     desc: "Calibrated and studied temperature sensors for the implementation of a Smart Aquarium.",
     img: "/static/projects/Calibration.jpg",
     github: "https://github.com/johnjoshua21/Calibration-of-Sensors-for-Smart-Aquarium",

@@ -13,7 +13,7 @@ function Navbar({ currentPage }) {
       </Head>
       <nav className="flex items-center justify-between">
         <li className="list-none font-bold text-lg cursor-pointer">
-          <Link href="/">
+          <Link href="/"> 
             <span className="font-black text-2xl flex items-center" style={{ fontFamily: "Quicksand, sans-serif" }}>
               <img
                 className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
@@ -56,3 +56,4 @@ function Navbar({ currentPage }) {
 }
 
 export default Navbar;
+
